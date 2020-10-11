@@ -1,10 +1,36 @@
 body {
     background-color: #282832;
+
 }
 #ChartWeek {
     background-color: #3B3B45;
+
 }
+#ChartMonth {
+    background-color: #3B3B45;
+
+}
+
+#ChartDay {
+    background-color: #3B3B45;
+}
+
+h2 {
+    text-align: center;
+    background-color: transparent;
+    font-size: 78px;
+    margin: 0;
+    color: antiquewhite;
+    letter-spacing: 15px;
+}
+
 .row{
     display: flex;
 
+}
+
+
+
+.section1 {
+  margin-top: 1000px;
 }

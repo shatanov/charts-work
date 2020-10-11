@@ -1,7 +1,6 @@
 const ctx = document.getElementById('ChartWeek').getContext('2d');
-
-let dataElem = [10, 10, 20, 10];
-var mixedChart = new Chart(ctx, {
+let dataElem = [150000, 170000, 255000, 200000, 150000, 170000, 150000];
+let ChartWeek = new Chart(ctx, {
     type: 'bar',
     data: {
         datasets: [{
@@ -13,11 +12,13 @@ var mixedChart = new Chart(ctx, {
                 '#F4B802',
                 '#F4B802',
                 '#F4B802',
+                '#F4B802',
+                '#F4B802',
             ],
             order: 1
             }, {
             label: 'План',
-            data: [45,45,45],
+            data: [240000,240000,240000,240000,240000,240000,240000],
             type: 'line',
             strokeColor: 'black',
             pointColor: 'black',
@@ -27,7 +28,7 @@ var mixedChart = new Chart(ctx, {
             borderColor: [
                 '#4279BC'
             ],
-            order: 2
+            order: 2,
         }],
         labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Cб', 'Вс']
     },
