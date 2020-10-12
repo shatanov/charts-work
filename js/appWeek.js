@@ -1,5 +1,5 @@
 const ctx = document.getElementById('ChartWeek').getContext('2d');
-let dataElem = [150000, 170000, 255000, 200000, 150000, 170000, 150000];
+let dataElem = [200000, 0];
 let ChartWeek = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -18,7 +18,7 @@ let ChartWeek = new Chart(ctx, {
             order: 1
             }, {
             label: 'План',
-            data: [240000,240000,240000,240000,240000,240000,240000],
+            data: [240000, 240000],
             type: 'line',
             strokeColor: 'black',
             pointColor: 'black',
@@ -30,7 +30,7 @@ let ChartWeek = new Chart(ctx, {
             ],
             order: 2,
         }],
-        labels: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Cб', 'Вс']
+        labels: ['', '']
     },
     options: {}
 });
