@@ -1,0 +1,12 @@
+[
+    {
+        "date": "1602326714",
+		"dailyshipmentfact": 378000,
+		"weeklyshipmentplan": 1650000,
+		"weeklyshipmentfact": 934890,
+		"monthlyshipmentplan": 6400000,
+		"monthlyshipmentfact": 3248250,
+		"weekstart": "1601856000",
+        "weekend": "1602460799"
+    }
+]

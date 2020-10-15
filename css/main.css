@@ -1,9 +1,18 @@
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url('../fonts/CenturyGothic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
     box-sizing: border-box;
 }
 
 .row{
     display: flex;
+    width: 100%;
+    max-width: 1920px;
 }
 
 ul,li,h1,p,h2,h3 {
@@ -16,13 +25,15 @@ ul,li,h1,p,h2,h3 {
     justify-content: center;
 }
 body{
+    font-family: 'CenturyGothic';
     margin: 0;
     padding: 0;
-    background-color: #282832;
+    background-color: #3c3c46;
 }
 
+
 .date__all{
-    font-size: 40px;
+    font-size: 30px;
     color: #FAEAD4;
     text-transform: uppercase;
     margin-top: 50px;
@@ -30,13 +41,29 @@ body{
     margin-bottom: 5%;
 }
 
+.logo {
+    width: 250px;
+    height: 300px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
 .shipment{
-    background-color: #3B3B45;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
     margin-right: 50px;
-    min-width: 370px;
+    max-width: 470px;
+    width: 100%;
 }
 
 .shipment__date{
+    font-weight: 100;
     font-size: 24px;
     color: #FAEAD4;
     text-transform: uppercase;
@@ -47,7 +74,8 @@ body{
 }
 
 .shipment__info{
-    font-size: 32px;
+    font-size: 40px;
+    font-weight: bolder;
     color: #ffffff;
     text-transform: uppercase;
     margin-bottom: 100px;
@@ -55,22 +83,25 @@ body{
 }
 
 .week__shipment--title{
-    font-size: 24px;
-    color: #FAEAD4;
+    font-size: 30px;
+    color: #ffffff;
     text-transform: uppercase;
     margin-top: 50px;
     letter-spacing: 3px;
     text-align: center;
     margin-bottom: 60px;
+    font-weight: bold;
 }
 
 .week__shipment{
     background-color: #3B3B45;
-    min-width: 370px;
+    max-width: 470px;
+    width: 100%;
     margin-right: 50px;
 }
 
 .date__week{
+    font-weight: 100;
     font-size: 26px;
     color: #ffffff;
     text-transform: uppercase;
@@ -79,22 +110,26 @@ body{
 
 .week__chart{
     width: 100%;
-    min-height: 430px;
+    min-height: 600px;
     background-color: transparent;
     border: 2px solid #ffffff;
     position: relative;
+    border-radius: 10px;
+    background-position: ;
 }
 
 .chart{
     position: absolute;
-    background-color: #ffffff;
+    background: linear-gradient(180deg, rgba(255,62,9,1) 0%, rgba(247,241,0,1) 46%, rgba(0,255,119,1) 100%);
     width: 100%;
     height: 2px;
     top: 100px;
+    border-radius: 11px;
+
 }
 
 .chart__plan{
-    font-size: 18px;
+    font-size: 30px;
     color:#ffffff;
     text-transform: uppercase;
     letter-spacing: 5px;
@@ -106,10 +141,14 @@ body{
     padding-bottom: 5px;
 }
 
-
+.date {
+    color: #fff;
+    font-size: 30px;
+}
 
 .chart__info{
-    font-size: 18px;
+    margin-top: 200px;
+    font-size: 30px;
     width: 100%;
     text-align: center;
     color: #ffffff;
@@ -119,5 +158,73 @@ body{
 
 .mounth__shipment{
     background-color: #3B3B45;
-    min-width: 370px;
+    max-width: 470px;
+    width: 100%;
+}
+
+@media (max-width: 1720px) {
+h2 {
+    font-size: 22px !important;
+}
+
+.week__chart {
+    min-height: 400px;
+}
+
+.chart__plan {
+    font-size: 22px;
+}
+
+.chart__info {
+    font-size: 30px;
+}
+
+.shipment__info {
+    font-size: 37px;
+}
+
+.shipment__date {
+    font-size: 22px;
+}
+
+.logo {
+    width: 200px;
+    height: 240px;
+}
+
+.date__week {
+    font-size: 20px;
+}
+}
+
+@media (max-width: 1400px) {
+    h2 {
+        font-size: 18px !important;
+    }
+    
+    .week__chart {
+        min-height: 300px;
+    }
+    
+    .chart__plan {
+        font-size: 18px;
+    }
+    
+    .chart__info {
+        font-size: 18px;
+
+    }
+    
+    .shipment__info {
+        font-size: 35px;
+    }
+    
+    .shipment__date {
+        font-size: 18px;
+    }
+    
+    .logo {
+        width: 200px;
+        height: 240px;
+    }
 }
