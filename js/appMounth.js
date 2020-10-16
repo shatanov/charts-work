@@ -40,12 +40,12 @@ async function getResponse() {
     if(weekProcent == 0){
         topWeek = 1;
     } else {
-        topWeek = (heightWeek * weekProcent) / 100;
+        topWeek = heightWeek - (heightWeek * weekProcent) / 100;
     }
     if(monthProcent == 0){
         topMounth = 1;
     } else {
-        topMounth = (heightMounth * weekProcent) / 100;
+        topMounth = heightMounth - (heightMounth * monthProcent) / 100;
     }
     chart.style.top = topWeek.toFixed() + 'px'
     chartMounth.style.top = topMounth.toFixed() + 'px'
