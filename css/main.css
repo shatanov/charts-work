@@ -89,8 +89,8 @@ body{
     margin-top: 50px;
     letter-spacing: 3px;
     text-align: center;
-    margin-bottom: 60px;
-    font-weight: bold;
+    margin-bottom: 20px;
+    font-weight: 900;
 }
 
 .week__shipment{
@@ -114,41 +114,50 @@ body{
     min-height: 600px;
     border: 2px solid #ffffff;
     position: relative;
-    border-radius: 10px;
-
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(180deg, rgba(9,255,66,1) 0%, rgba(247,241,0,1) 50%, rgba(255,0,0,1) 100%);
+    
 }
+
+
 
 
 .chart__mounth{
     position: absolute;
-    background-color: #FAEAD4;
-    width: 110%;
-    height: 3px;
-    left: -15px;
-    border-radius: 10px;
+    background-color: #3B3B45;
+    width: 100%;
+    height: 100%;
 }
 
 .chart{
     position: absolute;
-    background-color: #FAEAD4;
-    width: 110%;
-    height: 3px;
-    left: -15px;
-    border-radius: 10px;
+    background-color: #3B3B45;
+    width: 100%;
+    height: 100%;
 }
+
+.plan {
+    width: 100%;
+    height: 60px;
+    background: linear-gradient(0deg, rgba(244,244,244,1) 0%, rgba(50,50,50,1) 84%);
+    text-align: center;
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+}
+
 
 .chart__plan{
     font-size: 30px;
     color:#ffffff;
     text-transform: uppercase;
     letter-spacing: 5px;
-    position: absolute;
-    top: 15px;
     text-align: center;
-    width: 100%;
-    border-bottom: 2px solid #fff;
-    padding-bottom: 5px;
+    padding-top: 25px;
 }
+
 
 .date {
     color: #fff;
@@ -157,12 +166,22 @@ body{
 
 .chart__info{
     margin-top: 200px;
+    font-weight: 900;
     font-size: 30px;
     width: 100%;
     text-align: center;
     color: #ffffff;
     text-transform: uppercase;
     padding-top: 10px;
+}
+
+
+.chart__fact{
+    font-weight: 500;
+}
+
+.chart__procent{
+    font-weight: 500;
 }
 
 .mounth__shipment{
