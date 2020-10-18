@@ -26,13 +26,13 @@ async function getResponse() {
     topWeek = heightWeek - (heightWeek * weekProcent) / 100;
     let minusWeek = heightWeek - topWeek.toFixed();
     let minusMounth = heightMounth - topMounth.toFixed();
-
+    console.log(weekProcent.toFixed());
     if (weekProcent.toFixed() > 100){
         chartProcent[0].innerText = `+ ${weekProcent.toFixed() - 100} %`;
         chartPlan[0].style.color = '#3B3B45';
         plan[0].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
         chart.style.height = 0 + 'px';
-    } else if (weekProcent.toFixed() < 98 && weekProcent.toFixed()  > 1) {
+    } else if (weekProcent.toFixed() < 98 && weekProcent.toFixed()  >= 1) {
         chartProcent[0].innerText = `- ${100 - weekProcent.toFixed()} %`
         chart.style.height = (heigthChart - minusWeek) + 'px';
     } else if(weekProcent.toFixed() == 99 || weekProcent.toFixed() == 100){
@@ -42,10 +42,9 @@ async function getResponse() {
         chartProcent[0].innerText = `- ${100 - weekProcent.toFixed()} %`;
         chart.style.height = 0 + 'px';
         weekChart[0].style.backgroundColor = '#3B3B45';
-    }
-    else if(weekProcent.toFixed() == 0){
+    } else if(weekProcent.toFixed() == 0){
         chartProcent[0].innerText = `- ${100 - monthProcent.toFixed()} %`
-        chartMounth.style.height = 0 + 'px';
+        chart.style.height = 0 + 'px';
         weekChart[0].style.background = '#3B3B45';
     };
 
@@ -54,7 +53,7 @@ async function getResponse() {
         chartPlan[1].style.color = '#3B3B45';
         plan[1].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
         chartMounth.style.height = 0 + 'px';
-    } else if (monthProcent.toFixed() < 98 && monthProcent.toFixed() > 1){
+    } else if (monthProcent.toFixed() < 98 && monthProcent.toFixed() >= 1){
         chartProcent[1].innerText = `- ${100 - monthProcent.toFixed()} %`
         chartMounth.style.height = (heightMounth - minusMounth) + 'px';
     } else if(monthProcent.toFixed() == 99 || monthProcent.toFixed() == 100){
