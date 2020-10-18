@@ -1,3 +1,4 @@
+'use strict'
 const date = document.querySelector('.date');
 const chartFact = document.querySelectorAll('.chart__fact');
 const allDate = document.querySelectorAll('.date__week');
@@ -28,47 +29,70 @@ async function getResponse() {
     let minusMounth = heightMounth - topMounth.toFixed();
     console.log(weekProcent.toFixed());
     if (weekProcent.toFixed() > 100){
-        chartProcent[0].innerText = `+ ${weekProcent.toFixed() - 100} %`;
+        chartProcent[0].innerText = `+ ${(weekProcent.toFixed(1) - 100).toFixed(1)} %`;
         chartPlan[0].style.color = '#3B3B45';
         plan[0].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
         chart.style.height = 0 + 'px';
     } else if (weekProcent.toFixed() < 98 && weekProcent.toFixed()  >= 1) {
-        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed()} %`
+        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`
         chart.style.height = (heigthChart - minusWeek) + 'px';
-    } else if(weekProcent.toFixed() == 99 || weekProcent.toFixed() == 100){
-        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed()} %`
+    } else if(weekProcent.toFixed() == 99 || weekProcent.toFixed(1) == 100){
+        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`
         chart.style.height = 0 + 'px';
     } else if(weekProcent.toFixed() <= 0){
-        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed()} %`;
+        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`;
         chart.style.height = 0 + 'px';
         weekChart[0].style.backgroundColor = '#3B3B45';
     } else if(weekProcent.toFixed() == 0){
-        chartProcent[0].innerText = `- ${100 - monthProcent.toFixed()} %`
+        chartProcent[0].innerText = `- ${100 - monthProcent.toFixed(1)} %`
         chart.style.height = 0 + 'px';
         weekChart[0].style.background = '#3B3B45';
     };
 
     if (monthProcent.toFixed() > 100){
-        chartProcent[1].innerText = `+ ${monthProcent.toFixed() - 100} %`
+        chartProcent[1].innerText = `+ ${(monthProcent.toFixed(1) - 100).toFixed(1)} %`;
         chartPlan[1].style.color = '#3B3B45';
         plan[1].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
         chartMounth.style.height = 0 + 'px';
     } else if (monthProcent.toFixed() < 98 && monthProcent.toFixed() >= 1){
-        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed()} %`
+        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed(1)} %`
         chartMounth.style.height = (heightMounth - minusMounth) + 'px';
     } else if(monthProcent.toFixed() == 99 || monthProcent.toFixed() == 100){
-        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed()} %`
+        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed(1)} %`
         chartMounth.style.height = 0 + 'px';
     } else if(monthProcent.toFixed() == 0){
-        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed()} %`
+        chartProcent[1].innerText = `- ${100 - monthProcent.toFixed(1)} %`
         chartMounth.style.height = 0 + 'px';
         weekChart[1].style.background = '#3B3B45';
     };
     let millisecondsDate = content[0].date * 1000;
     let millisecondsWeekStart = content[0].weekstart * 1000;
     let millisecondsWeekEnd = content[0].weekend * 1000;
-    date.innerText = `${new Date(millisecondsDate).getDate()}.${new Date(millisecondsDate).getMonth()}.${new Date(millisecondsDate).getFullYear()} г.`;
-    allDate[0].innerText = `${new Date(millisecondsWeekStart).getDate()}.${new Date(millisecondsWeekStart).getMonth()}-${new Date(millisecondsWeekEnd).getDate()}.${new Date(millisecondsWeekEnd).getMonth()}`
-    allDate[1].innerText = `${new Date(millisecondsDate).getMonth()}.${new Date(millisecondsDate).getFullYear()} г.`
+    let dayDate = new Date(millisecondsDate).getDate();
+    let monthDate = new Date(millisecondsDate).getMonth();
+    let dayWeekStart = new Date(millisecondsWeekStart).getDate();
+    let monthWeekStart = new Date(millisecondsWeekStart).getMonth();
+    let dayWeekEnd = new Date(millisecondsWeekEnd).getDate();
+    let monthWeekEnd = new Date(millisecondsWeekEnd).getMonth();
+    if(dayDate < 10){
+        dayDate = '0' + dayDate;
+    } else if(monthDate < 10){
+        monthDate = '0' + monthDate;
+    };
+    if(dayWeekStart < 10){
+        dayWeekStart = '0' + dayWeekStart;
+    };
+    if(monthWeekStart < 10){
+        monthWeekStart = '0' + monthWeekStart;
+    };
+    if(dayWeekEnd < 10){
+        dayWeekEnd = '0' + dayWeekEnd;
+    };
+    if(monthWeekEnd < 10){
+        monthWeekEnd = '0' + monthWeekEnd;
+    };
+    date.innerText = `${dayWeekStart}.${monthDate}.${new Date(millisecondsDate).getFullYear()} г.`;
+    allDate[0].innerText = `${dayWeekStart}.${monthWeekStart}-${dayWeekEnd}.${monthWeekEnd}`
+    allDate[1].innerText = `${monthDate}.${new Date(millisecondsDate).getFullYear()} г.`
 };
 getResponse();
