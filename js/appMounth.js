@@ -8,7 +8,9 @@ const shipmentInfo = document.querySelector('.shipment__info');
 const weekChart = document.querySelectorAll('.week__chart');
 const chart = document.querySelector('.chart');
 const chartMounth = document.querySelector('.chart__mounth');
-const plan = document.querySelectorAll('.plan')
+const plan = document.querySelectorAll('.plan');
+const iskr = document.querySelector('.iskr');
+const iskr1 = document.querySelector('.iskr1');
 async function getResponse() {
     let response = await fetch('../server.json');
     let content = await response.json();
@@ -30,8 +32,7 @@ async function getResponse() {
     console.log(weekProcent.toFixed());
     if (weekProcent.toFixed() > 100){
         chartProcent[0].innerText = `+ ${(weekProcent.toFixed(1) - 100).toFixed(1)} %`;
-        chartPlan[0].style.color = '#3B3B45';
-        plan[0].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
+        iskr.style.display = 'block';
         chart.style.height = 0 + 'px';
     } else if (weekProcent.toFixed() < 98 && weekProcent.toFixed()  >= 1) {
         chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`
@@ -48,11 +49,9 @@ async function getResponse() {
         chart.style.height = 0 + 'px';
         weekChart[0].style.background = '#3B3B45';
     };
-
     if (monthProcent.toFixed() > 100){
         chartProcent[1].innerText = `+ ${(monthProcent.toFixed(1) - 100).toFixed(1)} %`;
-        chartPlan[1].style.color = '#3B3B45';
-        plan[1].style.background = 'linear-gradient(0deg, rgba(255,255,255,1) 33%, rgba(35,235,8,1) 92%)';
+        iskr1.style.display = 'block';
         chartMounth.style.height = 0 + 'px';
     } else if (monthProcent.toFixed() < 98 && monthProcent.toFixed() >= 1){
         chartProcent[1].innerText = `- ${100 - monthProcent.toFixed(1)} %`

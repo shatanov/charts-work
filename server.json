@@ -1,12 +1,12 @@
 [
     {
-        "date": "1602326714",
-		"dailyshipmentfact": 378000,
-		"weeklyshipmentplan": 1650000,
-		"weeklyshipmentfact": 1600000,
-		"monthlyshipmentplan": 6400000,
-		"monthlyshipmentfact": 10055040,
-		"weekstart": "1601856000",
-        "weekend": "1602460799"
+        "date": "16123267142",
+		"dailyshipmentfact": 390000,
+		"weeklyshipmentplan": 1670000,
+		"weeklyshipmentfact": 1000000,
+		"monthlyshipmentplan": 6500000,
+		"monthlyshipmentfact": 40000040,
+		"weekstart": "1605656022",
+        "weekend": "1612460711"
     }
 ]
