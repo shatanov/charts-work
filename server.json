@@ -2,10 +2,10 @@
     {
         "date": "16123267142",
 		"dailyshipmentfact": 390000,
-		"weeklyshipmentplan": 1670000,
-		"weeklyshipmentfact": 1000000,
+		"weeklyshipmentplan": 1000000,
+		"weeklyshipmentfact": 1,
 		"monthlyshipmentplan": 6500000,
-		"monthlyshipmentfact": 40000040,
+		"monthlyshipmentfact": 0,
 		"weekstart": "1605656022",
         "weekend": "1612460711"
     }

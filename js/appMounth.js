@@ -40,10 +40,6 @@ async function getResponse() {
     } else if(weekProcent.toFixed() == 99 || weekProcent.toFixed(1) == 100){
         chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`
         chart.style.height = 0 + 'px';
-    } else if(weekProcent.toFixed() <= 0){
-        chartProcent[0].innerText = `- ${100 - weekProcent.toFixed(1)} %`;
-        chart.style.height = 0 + 'px';
-        weekChart[0].style.backgroundColor = '#3B3B45';
     } else if(weekProcent.toFixed() == 0){
         chartProcent[0].innerText = `- ${100 - monthProcent.toFixed(1)} %`
         chart.style.height = 0 + 'px';
@@ -68,11 +64,11 @@ async function getResponse() {
     let millisecondsWeekStart = content[0].weekstart * 1000;
     let millisecondsWeekEnd = content[0].weekend * 1000;
     let dayDate = new Date(millisecondsDate).getDate();
-    let monthDate = new Date(millisecondsDate).getMonth();
+    let monthDate = new Date(millisecondsDate).getMonth() + 1;
     let dayWeekStart = new Date(millisecondsWeekStart).getDate();
-    let monthWeekStart = new Date(millisecondsWeekStart).getMonth();
+    let monthWeekStart = new Date(millisecondsWeekStart).getMonth() + 1;
     let dayWeekEnd = new Date(millisecondsWeekEnd).getDate();
-    let monthWeekEnd = new Date(millisecondsWeekEnd).getMonth();
+    let monthWeekEnd = new Date(millisecondsWeekEnd).getMonth() + 1;
     if(dayDate < 10){
         dayDate = '0' + dayDate;
     } else if(monthDate < 10){
@@ -90,7 +86,7 @@ async function getResponse() {
     if(monthWeekEnd < 10){
         monthWeekEnd = '0' + monthWeekEnd;
     };
-    date.innerText = `${dayWeekStart}.${monthDate}.${new Date(millisecondsDate).getFullYear()} г.`;
+    date.innerText = `${dayDate}.${monthDate}.${new Date(millisecondsDate).getFullYear()} г.`;
     allDate[0].innerText = `${dayWeekStart}.${monthWeekStart}-${dayWeekEnd}.${monthWeekEnd}`
     allDate[1].innerText = `${monthDate}.${new Date(millisecondsDate).getFullYear()} г.`
 };
